@@ -8,7 +8,9 @@ import { Row, Col, Alert } from 'reactstrap';
 import { useAppSelector } from 'app/config/store';
 
 export const Home = () => {
-  const account = useAppSelector(state => state.authentication.account);
+  const account = useAppSelector(state => state.recettes);
+
+  console.log(account);
 
   return (
     <Row>

@@ -1,0 +1,32 @@
+{
+  "annotations": {
+    "changelogDate": "20240122122758"
+  },
+  "dto": "no",
+  "entityTableName": "jhi_like",
+  "fields": [],
+  "jpaMetamodelFiltering": false,
+  "name": "Like",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "recette",
+      "otherEntityRelationshipName": "like",
+      "relationshipName": "recette",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "like",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

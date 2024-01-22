@@ -5,6 +5,35 @@ Main page styles
   display: inline-block;
   width: 100%;
   height: 497px;
-  background: url('/content/images/jhipster_family_member_1.svg') no-repeat center top;
+  background: url('/content/images/quizzinelogo.png') no-repeat center top;
   background-size: contain;
 }
+
+.pad {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.display-4 {
+  color: #ff9800; /* Orange */
+}
+
+.lead {
+  color: #ffc107; /* Amber */
+}
+
+.success-alert {
+  background-color: #4caf50; /* Green */
+  color: #fff; /* White */
+}
+
+.warning-alert {
+  background-color: #ff5722; /* Deep Orange */
+  color: #fff; /* White */
+}
+
+.alert-link {
+  color: #2196f3; /* Blue */
+}
+
+/* Add any other styles or modifications as needed */

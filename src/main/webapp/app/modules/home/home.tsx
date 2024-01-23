@@ -6,10 +6,12 @@ import { Link } from 'react-router-dom';
 import { Row, Col, Alert } from 'reactstrap';
 
 import { useAppSelector } from 'app/config/store';
+import ListRecette from 'app/modules/Recette/ListRecette';
+import AddIcon from '@mui/icons-material/Add';
+import { Fab } from '@mui/material';
 
 export const Home = () => {
-  const account = useAppSelector(state => state.recettes);
-
+  const account = useAppSelector(state => state.authentication.account);
   console.log(account);
 
   return (
@@ -18,34 +20,40 @@ export const Home = () => {
         <span className="hipster rounded" />
       </Col>
       <Col md="9">
-        <h1 className="display-4">Bienvenue sur Quizzine ! </h1>
-        <p className="lead">Premier site de recette en France !</p>
+        {/*<h1 className="display-4">Welcome, Java Hipster!</h1>*/}
+        {/*<p className="lead">This is your homepage</p>*/}
         {account?.login ? (
           <div>
-            <Alert color="success">Vous etes maintenant en ligne &quot;{account.login}&quot;.</Alert>
+            {/*<Alert color="success">You are logged in as user &quot;{account.login}&quot;.</Alert>*/}
+            <ListRecette />
           </div>
         ) : (
           <div>
             <Alert color="warning">
-              Si vous voulez vous
+              If you want to
               <span>&nbsp;</span>
               <Link to="/login" className="alert-link">
-                connecter
+                sign in
               </Link>
-              , vous pouvez utiliser les comptes par defaut generer par l'equipe IAY
+              , you can try the default accounts:
               <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;) <br />- User (login=&quot;user&quot; and
               password=&quot;user&quot;).
             </Alert>
 
             <Alert color="warning">
-              Vous n'avez pas de compte
+              You don&apos;t have an account yet?&nbsp;
               <Link to="/account/register" className="alert-link">
-                Creer un compte
+                Register a new account
               </Link>
             </Alert>
           </div>
         )}
       </Col>
+      <div>
+        <Fab color="primary" aria-label="add">
+          <AddIcon />
+        </Fab>
+      </div>
     </Row>
   );
 };

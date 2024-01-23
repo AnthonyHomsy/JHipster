@@ -30,6 +30,7 @@ public class Comment implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = { "user", "comments", "likes" }, allowSetters = true)
+    @JoinColumn(name = "employee_id")
     private Recette recette;
 
     @ManyToOne(fetch = FetchType.LAZY)

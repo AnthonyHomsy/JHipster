@@ -1,0 +1,23 @@
+
+entity Recette {
+	id Integer
+	titre String
+    description String
+}
+
+entity Comments {
+	comment String
+}
+
+entity Likes {
+
+}
+
+relationship ManyToOne{
+Recette{user(login)}to User
+Comments{user(login)} to User
+Likes{user(login)} to User
+Comments{recette(title)} to Recette
+Likes{recette(title)} to Recette
+}
+
